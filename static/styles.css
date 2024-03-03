@@ -1,4 +1,4 @@
-h1 {
+#randomQuoteH1 {
   font-weight:900;
   background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ae5bc73e-d3a9-4b67-9ecf-55b7d7340265/df4ik8t-24ff1726-0c0c-41f1-8dce-1485c0e65e72.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2FlNWJjNzNlLWQzYTktNGI2Ny05ZWNmLTU1YjdkNzM0MDI2NVwvZGY0aWs4dC0yNGZmMTcyNi0wYzBjLTQxZjEtOGRjZS0xNDg1YzBlNjVlNzIuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.aHcPQyC-qyBox9MVykBrQE5sSF-kHtN-M5krdsyE_yw");
   background-clip: text;
@@ -6,9 +6,7 @@ h1 {
   font-size: 70px;
   font-family: system-ui;
   background-color: black;
-  opacity: 0.8;
-
-  animation: neon 1s infinite alternate; /* Neon flicker animation */
+  opacity: 0.8; 
 }
 
 .randomQuote {
@@ -30,11 +28,6 @@ h1 {
   max-height: 100%;
 }
 
-@keyframes neon {
-  from { text-shadow: 0 0 5px #14e4ff, 0 0 15px #14e4ff, 0 0 25px #14e4ff; }
-  to { text-shadow: 0 0 15px #14e4ff, 0 0 25px #14e4ff, 0 0 35px #14e4ff; }
-}
-
 .randomQuote:hover {
   cursor: none; /*Without this, the option to rotate and zoom is bugged*/
   transform: scale(1.2) rotate(360deg); /* Adding rotation and zoom on hover */
@@ -48,7 +41,7 @@ h1 {
   background-position: center;
   color: white;
   cursor: pointer;
-
+  position: relative;
 }
 
 .animatedImage {
@@ -73,22 +66,69 @@ h1 {
   }
 }
 
+.errorWindow {
+  text-align: left;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  width: 200px;
+  padding: 10px;
+  transform: translateY(-10%);
+}
+
+.errorWindow:hover {
+  transform: scale(3) rotate(340deg);
+}
+
 .quote_dynamicPages {
   text-align: center;
   position: fixed;
   top: 50%;
   left: 50%;
-  margin-top: -50px;
-  margin-left: -100px;
-  font: italic;
-  font-size: 25px;
+  margin-top: 100px;
+  margin-left: -300px;
+  font-weight: bold;
+  font-size: 2em;
+  color: white;
 }
 
 .quote_dynamicPages:hover {
-  color: #fabada;
-
+  background-image: url("https://media.tenor.com/CnDT-sPeTkkAAAAM/epilepsy-god.gif");
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   transform: scale(4.2);
+  animation: bounce .5s alternate infinite ease-in;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-60%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+#mainTitle_dynamicPages {
+  color: rgb(195, 34, 166);
+  font-size: 12em;
+  font-weight: bold;
+  font-family: Helvetica;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+  animation: neon 1s infinite alternate; /* Neon flicker animation */
+  opacity: 0.9;
+  
+}
+
+#mainTitle_dynamicPages:hover{
   transform:rotate(180deg);
+  text-transform: lowercase;
+}
+
+@keyframes neon {
+  from { text-shadow: 0 0 2px #6aff14, 0 0 12px #6aff14, 0 0 22px #6aff14; }
+  to { text-shadow: 0 0 30px #6aff14, 0 0 40px #6aff14, 0 0 50px #6aff14; }
 }
 
 .footer {

@@ -2,7 +2,6 @@ import { FreshContext, Handlers, PageProps } from "$fresh/server.ts";
 import axios from "npm:axios";
 import { FilmQuotes } from "./../types.ts"
 
-
 export const handler: Handlers = {
     GET: async(_req: Request, ctx: FreshContext<unknown, FilmQuotes>) => {
         try {
@@ -11,7 +10,7 @@ export const handler: Handlers = {
             if(quote.status !== 200) throw new Error("Quote does not exist!");
             return ctx.render(quote.data);
         } catch(error) {
-            throw new Error("An error occured");
+            throw new Error("An error occured!");
         } 
     }
 };
@@ -26,6 +25,6 @@ export default function Page(props: PageProps) {
             </div>
         )
     } catch(error) {
-        <div>An error occured!</div>
+        return <div>{error.message}</div>
     }
 }

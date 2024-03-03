@@ -12,13 +12,13 @@ export default async function Home() {
 
     return (
       <div id="mainContainer">
-        <h1>RANDOM FILM QUOTES</h1>
+        <h1 id="randomQuoteH1">RANDOM FILM QUOTES</h1>
         <p class="randomQuote">{quote.data}</p>
         <a href="https://trollface.dk/" target="_blank">
           <Button variant="primary" class="trollButton">Random Quote</Button>
         </a>
         <img src="https://avatars.githubusercontent.com/u/55835767?v=4" class="animatedImage"/>
-        <Footer />
+        <img src="https://i.gifer.com/origin/91/91ecd2311e7def6121a9d55fcca1c29f.gif" class="errorWindow"/>
       </div>
     );
   } catch (error) {
